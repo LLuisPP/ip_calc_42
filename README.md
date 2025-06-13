@@ -62,6 +62,7 @@ make
 <h2>▶️ Execution</h2>
 
 Use correct syntax, for example:
+
 Single binary octet:
 `````
 ./ipcalc -b 11100000
