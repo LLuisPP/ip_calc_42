@@ -6,7 +6,7 @@
 /*   By: lprieto- <lprieto-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:23:36 by lprieto-          #+#    #+#             */
-/*   Updated: 2025/05/22 19:18:40 by lprieto-         ###   ########.fr       */
+/*   Updated: 2025/05/30 21:41:16 by lprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void    convert_binary_ip(const char *input);
 
 int     binary_to_decimal(const char *bin);
 void    decimal_to_binary(int num, char *buffer);
+int     count_ones_in_mask(const char *ip);
 
 /*********** ip_prints.c ************/
 

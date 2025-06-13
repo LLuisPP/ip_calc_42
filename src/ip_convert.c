@@ -6,7 +6,7 @@
 /*   By: lprieto- <lprieto-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 19:05:32 by lprieto-          #+#    #+#             */
-/*   Updated: 2025/05/22 19:13:18 by lprieto-         ###   ########.fr       */
+/*   Updated: 2025/05/30 21:40:56 by lprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,25 @@ void decimal_to_binary(int num, char *buffer)
         i--;
     }
     buffer[8] = '\0';
+}
+
+int count_ones_in_mask(const char *ip)
+{
+    char temp[100];
+    char *token;
+    int total_ones = 0;
+
+    strncpy(temp, ip, sizeof(temp));
+    token = strtok(temp, ".");
+    while (token)
+    {
+        int octet = atoi(token);
+        for (int i = 7; i >= 0; i--)
+        {
+            if (octet & (1 << i))
+                total_ones++;
+        }
+        token = strtok(NULL, ".");
+    }
+    return total_ones;
 }

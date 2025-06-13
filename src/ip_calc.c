@@ -6,7 +6,7 @@
 /*   By: lprieto- <lprieto-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 17:51:30 by lprieto-          #+#    #+#             */
-/*   Updated: 2025/05/22 19:13:14 by lprieto-         ###   ########.fr       */
+/*   Updated: 2025/05/30 21:46:20 by lprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ void convert_binary_ip(const char *input)
 
 int main(int argc, char **argv)
 {
-    char input[200];
+    char    input[200];
+    int     cidr;
 
     if (argc != 3)
     {
@@ -84,13 +85,17 @@ int main(int argc, char **argv)
 
     strncpy(input, argv[2], sizeof(input));
     input[sizeof(input) - 1] = '\0';
-
+    
     if (strcmp(argv[1], "-d") == 0)
     {
         printf("Resultado:\n");
         printf("Decimal - %s\n", input);
         if (is_valid_decimal_ip(input))
+        {
             convert_decimal_ip(input);
+            cidr = count_ones_in_mask(input);
+            printf("CIDR - /%d\n", cidr);
+        }
         else if (is_valid_octet_decimal(input))
             convert_single_octet_decimal(input);
         else
