@@ -1,6 +1,3 @@
-# ip_calc_42
-Dec-Bin &lt;> Bin-Dec Calculator
-
 <div align="center">
 <table>
   <tr>
